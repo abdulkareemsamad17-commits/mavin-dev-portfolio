@@ -9,6 +9,7 @@ A responsive, multi-page portfolio built with HTML, CSS, and vanilla JavaScript.
 3. The storefront preview is a fictional concept study, not a client project. Replace it with real work only when you have project details to share.
 4. The autoplaying hero video is a locally hosted Pexels clip by Yan Krukau. The platform section uses a Pexels clip by Kampus Production. Both videos and their posters are included in `assets/`. Keep the creator credits and license references with your project materials: <https://www.pexels.com/video/video-of-hands-using-droppers-7019510/>, <https://www.pexels.com/video/couple-busy-running-their-online-business-7288129/>, and <https://www.pexels.com/license/>.
 5. Platform and tool marks in `assets/platform-logos/` are local SVGs from [Simple Icons](https://simpleicons.org/) (CC0); Klaviyo is shown as a text wordmark. Product and company names are trademarks of their respective owners; their appearance does not imply endorsement.
+6. Additional images in `assets/work-study/` are used for the fictional skincare concept study and are served locally. They are sourced from Unsplash under the [Unsplash License](https://unsplash.com/license); the work page labels the study as concept work, not client work.
 
 ## Preview locally
 
