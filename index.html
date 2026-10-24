@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mavin is an independent e-commerce developer creating considered online stores for ambitious brands."
+    />
+    <meta name="theme-color" content="#f1eee7" />
+    <title>Mavin's Dev — E-commerce, considered.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Mavin's Dev, home">
+        <span class="brand-monogram" aria-hidden="true">M<span>.</span></span>
+        <span class="brand-name">MAVIN'S <span>DEV</span></span>
+      </a>
+      <p class="header-note">INDEPENDENT E-COMMERCE DEVELOPER</p>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="work.html">Selected work</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="platforms.html">Platforms</a>
+        <a class="nav-link" href="approach.html">Approach</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-cta" href="contact.html">Start a conversation <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero page-width" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-mark"></span> STORES WITH A POINT OF VIEW</p>
+          <h1 id="hero-title">E-commerce,<br />made to feel <em>right.</em></h1>
+          <p class="hero-intro">
+            I’m Mavin, an independent developer building thoughtful online
+            stores for brands ready to make a better impression online.
+          </p>
+          <div class="hero-links">
+            <a class="button button-dark" href="work.html">See the work <span aria-hidden="true">↘</span></a>
+            <a class="underlined-link" href="contact.html">Have a project in mind?</a>
+          </div>
+        </div>
+        <figure class="hero-film">
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="assets/hero-film-poster.jpg"
+            aria-label="Product footage of skincare bottles and dropper applicators"
+          >
+            <source src="assets/hero-film-720.mp4" type="video/mp4" />
+          </video>
+          <div class="film-shade" aria-hidden="true"></div>
+        </figure>
+        <div class="hero-bottom" aria-hidden="true">
+          <span>GOOD STORES MAKE GOOD THINGS EASY TO FIND.</span>
+          <a href="#explore">EXPLORE THE STUDIO <span>↓</span></a>
+        </div>
+      </section>
+
+      <div class="signal-strip" aria-label="E-commerce focus">
+        <span>THE BRAND</span><i></i>
+        <span>THE PRODUCT</span><i></i>
+        <span>THE EXPERIENCE</span><i></i>
+        <span>THE MOMENT IT CLICKS</span>
+      </div>
+
+      <section class="home-highlights page-width" id="explore" aria-labelledby="highlights-title">
+        <div class="section-overline">
+          <span>THE STUDIO</span>
+          <span>THOUGHTFUL E-COMMERCE, BUILT AROUND YOUR BUSINESS</span>
+        </div>
+        <div class="home-highlights-intro">
+          <h2 id="highlights-title">A clearer path<br />from <em>idea to online.</em></h2>
+          <p>
+            Whether you’re launching, refining, or moving platforms, explore
+            the ways I can help make your online store work harder for your brand.
+          </p>
+        </div>
+        <div class="home-card-grid">
+          <a class="home-card" href="services.html">
+            <span>01 / WHAT I DO</span>
+            <h3>Services</h3>
+            <p>From custom storefronts and platform moves to ongoing improvements.</p>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <a class="home-card" href="work.html">
+            <span>02 / A WORK IN PROGRESS</span>
+            <h3>Selected work</h3>
+            <p>Explore a product-first storefront concept and the thinking behind it.</p>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <a class="home-card" href="platforms.html">
+            <span>03 / YOUR PLATFORM, YOUR WAY</span>
+            <h3>Platforms</h3>
+            <p>Find the right approach for your store, marketplace, and tools.</p>
+            <b aria-hidden="true">↗</b>
+          </a>
+        </div>
+        <div class="home-note">
+          <span>INDEPENDENT BY DESIGN</span>
+          <p>
+            Good work starts with understanding what you sell and what your
+            customers need. <a href="approach.html">See how I approach a project <b aria-hidden="true">↗</b></a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-width">
+      <a class="brand" href="index.html" aria-label="Mavin's Dev, back to home">
+        <span class="brand-monogram" aria-hidden="true">M<span>.</span></span>
+        <span class="brand-name">MAVIN'S <span>DEV</span></span>
+      </a>
+      <span class="footer-copyright">© 2026 MAVIN'S DEV <i>·</i> INDEPENDENT E-COMMERCE DEVELOPER</span>
+      <a class="back-top" href="index.html#home">BACK TO THE TOP <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>
