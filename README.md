@@ -4,7 +4,7 @@ A responsive, multi-page portfolio built with HTML, CSS, and vanilla JavaScript.
 
 ## Personalize before publishing
 
-1. Replace `YOUR_EMAIL@example.com` in `contact.html` with your contact email.
+1. Update the public contact email in `contact.html` if it changes.
 2. Update the introduction and About copy when you are ready to finalize your positioning.
 3. The storefront preview is a fictional concept study, not a client project. Replace it with real work only when you have project details to share.
 4. The autoplaying hero video is a locally hosted Pexels clip by Yan Krukau. The platform section uses a Pexels clip by Kampus Production. Both videos and their posters are included in `assets/`. Keep the creator credits and license references with your project materials: <https://www.pexels.com/video/video-of-hands-using-droppers-7019510/>, <https://www.pexels.com/video/couple-busy-running-their-online-business-7288129/>, and <https://www.pexels.com/license/>.
