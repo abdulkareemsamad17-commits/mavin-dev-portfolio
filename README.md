@@ -6,10 +6,10 @@ A responsive, multi-page portfolio built with HTML, CSS, and vanilla JavaScript.
 
 1. Update the public contact email in `contact.html` if it changes.
 2. Update the introduction and About copy when you are ready to finalize your positioning.
-3. The storefront preview is a fictional concept study, not a client project. Replace it with real work only when you have project details to share.
+3. The Selected Work page presents platform interface references, not commissioned client projects or claims about client results. The six showcase screenshots are stored in `assets/work-showcase/`.
 4. The autoplaying hero video is a locally hosted Pexels clip by Yan Krukau. The platform section uses a Pexels clip by Kampus Production. Both videos and their posters are included in `assets/`. Keep the creator credits and license references with your project materials: <https://www.pexels.com/video/video-of-hands-using-droppers-7019510/>, <https://www.pexels.com/video/couple-busy-running-their-online-business-7288129/>, and <https://www.pexels.com/license/>.
 5. Platform and tool marks in `assets/platform-logos/` are local SVGs from [Simple Icons](https://simpleicons.org/) (CC0); Klaviyo is shown as a text wordmark. Product and company names are trademarks of their respective owners; their appearance does not imply endorsement.
-6. Additional images in `assets/work-study/` are used for the fictional skincare concept study and are served locally. They are sourced from Unsplash under the [Unsplash License](https://unsplash.com/license); the work page labels the study as concept work, not client work.
+6. Images in `assets/work-study/` are local supporting imagery sourced from Unsplash under the [Unsplash License](https://unsplash.com/license). The Selected Work screenshots in `assets/work-showcase/` are supplied for this portfolio and are labeled as interface references, not client work or performance claims.
 
 ## Preview locally
 
