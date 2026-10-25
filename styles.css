@@ -588,24 +588,24 @@ a:focus-visible {
 .service-summary-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid rgba(33, 31, 26, 0.28);
+  gap: 14px;
 }
 
 .service-summary-card {
   display: flex;
-  min-height: 245px;
+  min-height: 260px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 25px 24px;
-  transition: background-color 180ms ease;
-}
-
-.service-summary-card + .service-summary-card {
-  border-left: 1px solid rgba(33, 31, 26, 0.28);
+  padding: 26px 24px;
+  border: 1px solid rgba(33, 31, 26, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .service-summary-card:hover {
-  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-3px);
+  border-color: rgba(163, 71, 50, 0.52);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .service-summary-card .service-summary-label {
@@ -1766,6 +1766,10 @@ a:focus-visible {
     width: calc(100% - 64px);
   }
 
+  .service-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .site-header {
     grid-template-columns: auto 1fr auto;
     column-gap: 20px;
@@ -2193,11 +2197,6 @@ a:focus-visible {
   .service-summary-card {
     min-height: 0;
     padding: 22px 20px;
-  }
-
-  .service-summary-card + .service-summary-card {
-    border-top: 1px solid rgba(33, 31, 26, 0.28);
-    border-left: 0;
   }
 
   .service-summary-card h3 {
