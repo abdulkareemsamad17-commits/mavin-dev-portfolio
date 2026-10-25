@@ -705,31 +705,19 @@ a:focus-visible {
 }
 
 .service-video {
-  max-width: 980px;
-  margin: 0 0 44px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 44px;
 }
 
 .service-video video {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
+  max-height: 506px;
   border: 1px solid var(--line);
   background: #e9e5db;
   object-fit: cover;
-}
-
-.service-video figcaption {
-  margin-top: 9px;
-  color: #68655c;
-  font-size: 8px;
-  line-height: 1.6;
-}
-
-.service-video figcaption a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--line);
-  text-underline-offset: 3px;
 }
 
 .service-detail-grid {
@@ -2226,6 +2214,10 @@ a:focus-visible {
   }
 
   .service-detail-heading {
+    margin-bottom: 30px;
+  }
+
+  .service-video {
     margin-bottom: 30px;
   }
 
