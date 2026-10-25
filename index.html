@@ -32,7 +32,16 @@
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a class="nav-link" href="index.html" aria-current="page">Home</a>
         <a class="nav-link" href="work.html">Selected work</a>
-        <a class="nav-link" href="services.html">Services</a>
+        <details class="nav-services">
+          <summary class="nav-link">Services</summary>
+          <div class="nav-services-menu">
+            <a href="index.html#services">All services</a>
+            <a href="seo.html">SEO</a>
+            <a href="conversion-optimization.html">Conversion optimization</a>
+            <a href="email-retention.html">Email retention</a>
+            <a href="product-visibility.html">Product visibility</a>
+          </div>
+        </details>
         <a class="nav-link" href="platforms.html">Platforms</a>
         <a class="nav-link" href="approach.html">Approach</a>
         <a class="nav-link" href="about.html">About</a>
@@ -95,7 +104,7 @@
           </p>
         </div>
         <div class="home-card-grid">
-          <a class="home-card" href="services.html">
+          <a class="home-card" href="index.html#services">
             <span>01 / WHAT I DO</span>
             <h3>Services</h3>
             <p>From custom storefronts and platform moves to ongoing improvements.</p>
@@ -120,6 +129,43 @@
             Good work starts with understanding what you sell and what your
             customers need. <a href="approach.html">See how I approach a project <b aria-hidden="true">↗</b></a>
           </p>
+        </div>
+      </section>
+
+      <section class="service-summaries page-width" id="services" aria-labelledby="service-summaries-title">
+        <div class="section-overline">
+          <span>FOCUSED SERVICES</span>
+          <span>FOUR WAYS TO SUPPORT YOUR STORE</span>
+        </div>
+        <div class="service-summaries-heading">
+          <h2 id="service-summaries-title">Make every<br /><em>visit count.</em></h2>
+          <p>Focused support for being found, helping shoppers decide, and staying connected after a visit.</p>
+        </div>
+        <div class="service-summary-grid">
+          <article class="service-summary-card">
+            <span>01 / SEARCH</span>
+            <h3>SEO</h3>
+            <p>Improve the foundations that help search engines understand your store and its products.</p>
+            <a href="seo.html">How it works <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-summary-card">
+            <span>02 / SHOPPING EXPERIENCE</span>
+            <h3>Conversion optimization</h3>
+            <p>Review key shopping journeys and identify practical opportunities to reduce friction.</p>
+            <a href="conversion-optimization.html">How it works <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-summary-card">
+            <span>03 / CUSTOMER RELATIONSHIPS</span>
+            <h3>Email retention</h3>
+            <p>Make email touchpoints more useful for welcoming, informing, and reconnecting with customers.</p>
+            <a href="email-retention.html">How it works <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-summary-card">
+            <span>04 / PRODUCT DISCOVERY</span>
+            <h3>Product visibility</h3>
+            <p>Help shoppers and product discovery channels make sense of your product information.</p>
+            <a href="product-visibility.html">How it works <span aria-hidden="true">→</span></a>
+          </article>
         </div>
       </section>
 
@@ -164,7 +210,7 @@
         <a class="back-top" href="index.html#home">BACK TO THE TOP <span aria-hidden="true">↑</span></a>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html" aria-current="page">Home</a><a href="work.html">Selected work</a><a href="services.html">Services</a><a href="platforms.html">Platforms</a><a href="approach.html">Approach</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        <a href="index.html" aria-current="page">Home</a><a href="work.html">Selected work</a><a href="index.html#services">Services</a><a href="platforms.html">Platforms</a><a href="approach.html">Approach</a><a href="about.html">About</a><a href="contact.html">Contact</a>
       </nav>
       <p class="footer-copyright">© 2026 MARVIN'S DEV <i>·</i> INDEPENDENT E-COMMERCE DEVELOPER</p>
     </footer>
