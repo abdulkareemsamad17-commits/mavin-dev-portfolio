@@ -581,37 +581,43 @@ a:focus-visible {
   max-width: 350px;
   margin: 0 0 5px;
   color: #626057;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.9;
 }
 
 .service-summary-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid var(--line);
+  border: 1px solid rgba(33, 31, 26, 0.28);
 }
 
 .service-summary-card {
   display: flex;
-  min-height: 225px;
+  min-height: 245px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 22px;
+  padding: 25px 24px;
+  transition: background-color 180ms ease;
 }
 
 .service-summary-card + .service-summary-card {
-  border-left: 1px solid var(--line);
+  border-left: 1px solid rgba(33, 31, 26, 0.28);
 }
 
-.service-summary-card > span {
+.service-summary-card:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.service-summary-card .service-summary-label {
   color: var(--rust);
-  font-size: 7px;
+  font-size: 8px;
   font-weight: 600;
   letter-spacing: 1px;
+  line-height: 1.5;
 }
 
 .service-summary-card h3 {
-  margin: 23px 0 9px;
+  margin: 25px 0 11px;
   font-family: var(--serif);
   font-size: clamp(21px, 2vw, 27px);
   font-weight: 400;
@@ -620,23 +626,31 @@ a:focus-visible {
 }
 
 .service-summary-card p {
-  margin: 0 0 18px;
+  margin: 0 0 22px;
   color: #68655c;
-  font-size: 9px;
-  line-height: 1.8;
+  font-size: 10px;
+  line-height: 1.85;
 }
 
 .service-summary-card a {
   display: inline-flex;
+  align-items: center;
   gap: 8px;
   margin-top: auto;
-  color: #5a574f;
-  font-size: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(163, 71, 50, 0.4);
+  color: var(--ink);
+  font-size: 9px;
   font-weight: 600;
 }
 
 .service-summary-card a span {
   color: var(--rust);
+  transition: transform 160ms ease;
+}
+
+.service-summary-card a:hover span {
+  transform: translateX(3px);
 }
 
 .service-detail {
@@ -764,6 +778,22 @@ a:focus-visible {
   color: #5d5a53;
   font-size: 10px;
   line-height: 1.8;
+}
+
+.service-facts a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--rust-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(120, 54, 40, 0.4);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.service-facts a span {
+  color: var(--rust);
 }
 
 .service-audit {
@@ -2174,16 +2204,16 @@ a:focus-visible {
 
   .service-summary-card {
     min-height: 0;
-    padding: 20px;
+    padding: 22px 20px;
   }
 
   .service-summary-card + .service-summary-card {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid rgba(33, 31, 26, 0.28);
     border-left: 0;
   }
 
   .service-summary-card h3 {
-    margin: 13px 0 7px;
+    margin: 14px 0 8px;
   }
 
   .service-detail {
