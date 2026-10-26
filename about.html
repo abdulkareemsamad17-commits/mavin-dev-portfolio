@@ -41,12 +41,15 @@
 
       .about-portrait {
         position: relative;
+        width: min(100%, 360px);
         min-width: 0;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 1;
         overflow: hidden;
         margin: 0;
         border: 1px solid var(--line);
+        border-radius: 50%;
         background: var(--paper-deep);
+        justify-self: center;
       }
 
       .about-portrait img {
@@ -293,7 +296,7 @@
 
         .about-portrait {
           order: -1;
-          width: min(100%, 520px);
+          width: min(72vw, 300px);
           aspect-ratio: 1;
           justify-self: center;
         }
