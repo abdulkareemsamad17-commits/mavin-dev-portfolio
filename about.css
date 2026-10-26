@@ -147,33 +147,12 @@
       }
 
       .about-belief-card p,
-      .about-experience p,
       .about-fit-card p,
       .about-contact-details p {
         margin: 0;
         color: var(--ink-soft);
         font-size: 14px;
         line-height: 1.8;
-      }
-
-      .about-experience {
-        display: grid;
-        grid-template-columns: minmax(190px, 0.65fr) minmax(0, 1.35fr);
-        align-items: start;
-        gap: 32px;
-      }
-
-      .about-experience h2 {
-        margin: 0;
-        font-family: var(--serif);
-        font-size: clamp(34px, 4vw, 48px);
-        font-weight: 400;
-        line-height: 1;
-      }
-
-      .about-experience p {
-        padding: 2px 0 2px 25px;
-        border-left: 1px solid var(--line);
       }
 
       .about-fit-grid {
@@ -318,10 +297,6 @@
 
         .about-belief-grid,
         .about-fit-grid,
-        .about-experience {
-          grid-template-columns: 1fr;
-        }
-
         .about-belief-card {
           min-height: 0;
           padding: 22px;
@@ -334,14 +309,6 @@
 
         .about-belief-card h3 {
           margin: 20px 0 9px;
-        }
-
-        .about-experience {
-          gap: 18px;
-        }
-
-        .about-experience p {
-          padding: 0 0 0 17px;
         }
 
         .about-cta {
