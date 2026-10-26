@@ -214,7 +214,7 @@
 
       .about-contact-details {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 10px 20px;
         margin-top: 25px;
         padding-top: 17px;
@@ -230,8 +230,9 @@
         color: var(--ink);
       }
 
-      .about-contact-details .about-social {
-        grid-column: 1 / -1;
+      .footer-contact-link:focus-visible {
+        outline: 2px solid var(--rust);
+        outline-offset: 3px;
       }
 
       @media (max-width: 850px) {
@@ -328,9 +329,6 @@
           gap: 8px;
         }
 
-        .about-contact-details .about-social {
-          grid-column: auto;
-        }
       }
 
       @media (prefers-color-scheme: dark) {
