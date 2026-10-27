@@ -2589,6 +2589,10 @@ a:focus-visible {
     width: calc(100% - 32px);
   }
 
+  .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .hero-links {
     align-items: flex-start;
     flex-direction: column;
