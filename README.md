@@ -1,4 +1,4 @@
-# Marvin's Dev — E-commerce developer homepage
+# Marvin's Growth Partner — E-commerce developer homepage
 
 A responsive, multi-page portfolio built with HTML, CSS, and vanilla JavaScript. Home, Selected Work, Services, Platforms, Approach, About, and Contact each have their own HTML page and share the same responsive navigation. It has no build step or package dependencies.
 
