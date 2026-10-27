@@ -73,8 +73,7 @@
   color: var(--ink-soft);
 }
 
-.case-detail-link,
-.case-video-link {
+.case-detail-link {
   width: fit-content;
   color: var(--ink);
   font-size: 11px;
@@ -84,13 +83,7 @@
   text-underline-offset: 4px;
 }
 
-.case-video-link {
-  color: var(--muted);
-  font-weight: 400;
-}
-
-.case-detail-link span,
-.case-video-link span {
+.case-detail-link span {
   color: var(--rust);
 }
 
