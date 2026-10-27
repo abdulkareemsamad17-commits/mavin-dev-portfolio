@@ -476,8 +476,9 @@
         <form
           class="audit-form"
           id="audit-form"
-          action="https://formspree.io/f/[FORMSPREE_FORM_ID]"
+          action="mailto:info@infomarvinsagency.com"
           method="post"
+          enctype="text/plain"
           novalidate
         >
           <div class="audit-honeypot" aria-hidden="true">
@@ -544,7 +545,7 @@
           <ul class="contact-ways">
             <li class="contact-way">
               <strong>Book a 15-minute call</strong>
-              <p><a href="[BOOKING LINK, e.g. Calendly]">Choose a time to talk</a> <span>[BOOKING LINK, e.g. Calendly]</span></p>
+              <p>Booking link: [BOOKING LINK, e.g. Calendly]</p>
             </li>
             <li class="contact-way">
               <strong>Email</strong>
@@ -640,7 +641,6 @@
     </footer>
     <script>
       const auditForm = document.querySelector("#audit-form");
-      const auditSubmit = document.querySelector("#audit-submit");
       const auditStatus = document.querySelector("#audit-status");
       const auditFields = [
         {
@@ -729,38 +729,22 @@
           return;
         }
 
-        const endpoint = auditForm.action;
-        if (auditForm.getAttribute("action").includes("[FORMSPREE_FORM_ID]")) {
-          auditStatus.innerHTML = 'The form service is not connected yet. Please email <a href="mailto:info@infomarvinsagency.com">info@infomarvinsagency.com</a> instead.';
-          auditStatus.dataset.state = "error";
-          return;
-        }
+        const formData = new FormData(auditForm);
+        const improvements = formData.getAll("improvements[]");
+        const body = [
+          `Name: ${formData.get("name")}`,
+          `Email: ${formData.get("email")}`,
+          `Store URL: ${formData.get("store_url")}`,
+          `Platform: ${formData.get("platform") || "Not specified"}`,
+          `What to improve: ${improvements.length ? improvements.join(", ") : "Not specified"}`,
+          `Anything else: ${formData.get("notes") || "Not specified"}`,
+        ].join("\n");
+        const subject = `Free store audit request — ${formData.get("name")}`;
+        const mailtoUrl = `mailto:info@infomarvinsagency.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        auditSubmit.disabled = true;
-        auditSubmit.textContent = "Sending request...";
-        auditForm.setAttribute("aria-busy", "true");
-
-        try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            body: new FormData(auditForm),
-            headers: { Accept: "application/json" },
-          });
-          if (!response.ok) {
-            throw new Error(`Form service returned ${response.status}`);
-          }
-          auditForm.reset();
-          auditFields.forEach((field) => setFieldError(field));
-          auditStatus.textContent = "Thanks. I'll reply within [24 hours, Monday to Friday].";
-          auditStatus.dataset.state = "success";
-        } catch {
-          auditStatus.innerHTML = 'I couldn’t send your request just now. Please email <a href="mailto:info@infomarvinsagency.com">info@infomarvinsagency.com</a> instead.';
-          auditStatus.dataset.state = "error";
-        } finally {
-          auditSubmit.disabled = false;
-          auditSubmit.textContent = "Request my free audit";
-          auditForm.removeAttribute("aria-busy");
-        }
+        auditStatus.innerHTML = 'Your email app should open with your request ready. Review it and press Send to deliver it. If nothing opens, <a href="mailto:info@infomarvinsagency.com">email me directly</a>.';
+        auditStatus.dataset.state = "";
+        window.location.href = mailtoUrl;
       });
     </script>
   </body>
