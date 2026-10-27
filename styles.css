@@ -1248,7 +1248,6 @@ a:focus-visible {
 }
 
 .testimonial-control,
-.testimonial-rotation,
 .testimonial-dot {
   display: inline-flex;
   min-width: 44px;
@@ -1266,14 +1265,7 @@ a:focus-visible {
   font-size: 18px;
 }
 
-.testimonial-rotation {
-  padding: 0 12px;
-  border-radius: 24px;
-  font-size: 9px;
-}
-
-.testimonial-control:hover,
-.testimonial-rotation:hover {
+.testimonial-control:hover {
   border-color: var(--rust);
   color: var(--rust);
 }
@@ -2693,10 +2685,7 @@ a:focus-visible {
     min-width: 32px;
   }
 
-  .testimonial-rotation {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
+
 }
 
 @media (max-width: 375px) {

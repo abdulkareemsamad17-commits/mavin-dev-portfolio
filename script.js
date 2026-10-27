@@ -25,12 +25,10 @@ if (testimonialCarousel) {
   const slides = [...testimonialCarousel.querySelectorAll(".testimonial-card")];
   const previousButton = testimonialCarousel.querySelector(".testimonial-previous");
   const nextButton = testimonialCarousel.querySelector(".testimonial-next");
-  const rotationButton = testimonialCarousel.querySelector(".testimonial-rotation");
   const dots = [...testimonialCarousel.querySelectorAll(".testimonial-dot")];
   const status = testimonialCarousel.querySelector(".testimonial-status");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let currentIndex = 0;
-  let rotationPaused = reducedMotion.matches;
   let rotationTimer;
   let temporarilyPaused = false;
 
@@ -66,22 +64,8 @@ if (testimonialCarousel) {
 
   const startRotation = () => {
     stopRotation();
-    if (!rotationPaused && !temporarilyPaused && !document.hidden) {
+    if (!reducedMotion.matches && !temporarilyPaused && !document.hidden) {
       rotationTimer = window.setInterval(() => showSlide(currentIndex + 1), 6000);
-    }
-  };
-
-  const setRotationPaused = (paused) => {
-    rotationPaused = paused;
-    rotationButton.textContent = paused ? "Play" : "Pause";
-    rotationButton.setAttribute(
-      "aria-label",
-      paused ? "Start automatic review rotation" : "Pause automatic review rotation",
-    );
-    if (paused) {
-      stopRotation();
-    } else {
-      startRotation();
     }
   };
 
@@ -100,13 +84,6 @@ if (testimonialCarousel) {
       showSlide(index, true);
       startRotation();
     });
-  });
-
-  rotationButton.addEventListener("click", () => {
-    if (rotationPaused) {
-      temporarilyPaused = false;
-    }
-    setRotationPaused(!rotationPaused);
   });
 
   testimonialCarousel.addEventListener("pointerenter", () => {
@@ -134,11 +111,12 @@ if (testimonialCarousel) {
   document.addEventListener("visibilitychange", startRotation);
   reducedMotion.addEventListener("change", (event) => {
     if (event.matches) {
-      setRotationPaused(true);
+      stopRotation();
+    } else {
+      startRotation();
     }
   });
 
   showSlide(0);
-  setRotationPaused(rotationPaused);
   startRotation();
 }
