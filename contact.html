@@ -454,16 +454,7 @@
             <a href="product-visibility.html">Product visibility</a>
           </div>
         </details>
-        <details class="nav-services">
-          <summary class="nav-link">Platforms</summary>
-          <div class="nav-services-menu">
-            <a href="platforms.html">Platforms overview</a>
-            <a href="shopify.html">Shopify</a>
-            <a href="wix.html">Wix</a>
-            <a href="woocommerce.html">WooCommerce</a>
-            <a href="migration.html">Migration</a>
-          </div>
-        </details>
+        <details class="nav-services"><summary class="nav-link">Platforms</summary><div class="nav-services-menu"><a href="platforms.html">Platforms overview</a><a href="shopify.html">Shopify</a><a href="wix.html">Wix</a><a href="woocommerce.html">WooCommerce</a><a href="migration.html">Migration</a></div></details>
         <a class="nav-link" href="approach.html">Approach</a>
         <a class="nav-link" href="about.html">About</a>
         <a class="nav-cta" href="contact.html" aria-current="page">Get a free store audit <span aria-hidden="true">&nearr;</span></a>
@@ -485,18 +476,19 @@
         <form
           class="audit-form"
           id="audit-form"
-          action="mailto:info@infomarvinsagency.com"
+          action="https://api.web3forms.com/submit"
           method="post"
-          enctype="text/plain"
-          novalidate
         >
+          <input type="hidden" name="access_key" value="ceb6c99c-f341-44eb-b88f-a14b48fe4ff2" />
+          <input type="hidden" name="subject" value="New free store audit request" />
+          <input type="hidden" name="from_name" value="Marvin's Growth Partner website" />
+
           <div class="audit-honeypot" aria-hidden="true">
-            <label for="audit-company">Leave this field empty</label>
-            <input id="audit-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+            <input name="botcheck" type="checkbox" value="1" tabindex="-1" />
           </div>
 
           <div class="audit-field">
-            <label for="audit-name">Name <span aria-hidden="true">*</span></label>
+            <label for="audit-name">Full name <span aria-hidden="true">*</span></label>
             <input id="audit-name" name="name" type="text" autocomplete="name" required aria-describedby="audit-name-error" />
             <span class="audit-error" id="audit-name-error" aria-live="polite"></span>
           </div>
@@ -508,8 +500,8 @@
           </div>
 
           <div class="audit-field">
-            <label for="audit-url">Store URL <span aria-hidden="true">*</span></label>
-            <input id="audit-url" name="store_url" type="url" autocomplete="url" placeholder="https://yourstore.com" required aria-describedby="audit-url-error" />
+            <label for="audit-url">Store URL <span>(optional)</span></label>
+            <input id="audit-url" name="store_url" type="url" autocomplete="url" placeholder="https://yourstore.com" aria-describedby="audit-url-error" />
             <span class="audit-error" id="audit-url-error" aria-live="polite"></span>
           </div>
 
@@ -535,11 +527,12 @@
           </div>
 
           <div class="audit-field">
-            <label for="audit-notes">Anything else I should know?</label>
-            <textarea id="audit-notes" name="notes" rows="5"></textarea>
+            <label for="audit-message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="audit-message" name="message" rows="5" required aria-describedby="audit-message-error"></textarea>
+            <span class="audit-error" id="audit-message-error" aria-live="polite"></span>
           </div>
 
-          <button class="audit-submit" id="audit-submit" type="submit">Request my free audit</button>
+          <button class="audit-submit" id="audit-submit" type="submit">Send Message</button>
           <p class="audit-status" id="audit-status" role="status" aria-live="polite" aria-atomic="true"></p>
           <p class="audit-privacy">I only use your details to reply to your request.</p>
         </form>
@@ -648,113 +641,5 @@
       </nav>
       <p class="footer-copyright">&copy; 2026 MARVIN'S GROWTH PARTNER <i>&middot;</i> INDEPENDENT E-COMMERCE GROWTH SPECIALIST</p>
     </footer>
-    <script>
-      const auditForm = document.querySelector("#audit-form");
-      const auditStatus = document.querySelector("#audit-status");
-      const auditFields = [
-        {
-          input: document.querySelector("#audit-name"),
-          error: document.querySelector("#audit-name-error"),
-          message: "Please enter your name.",
-        },
-        {
-          input: document.querySelector("#audit-email"),
-          error: document.querySelector("#audit-email-error"),
-          message: "Please enter a valid email address.",
-        },
-        {
-          input: document.querySelector("#audit-url"),
-          error: document.querySelector("#audit-url-error"),
-          message: "Please enter a valid store URL, including https://.",
-        },
-      ];
-
-      const setFieldError = (field, message = "") => {
-        field.error.textContent = message;
-        if (message) {
-          field.input.setAttribute("aria-invalid", "true");
-        } else {
-          field.input.removeAttribute("aria-invalid");
-        }
-      };
-
-      const validateField = (field) => {
-        const value = field.input.value.trim();
-        let message = "";
-
-        if (!value) {
-          message = field.message.startsWith("Please enter a valid")
-            ? field.message.replace("Please enter a valid", "Please enter")
-            : field.message;
-          if (field.input.type === "email") {
-            message = "Please enter your email address.";
-          }
-          if (field.input.type === "url") {
-            message = "Please enter your store URL.";
-          }
-        } else if (!field.input.checkValidity()) {
-          message = field.message;
-        } else if (field.input.type === "url") {
-          try {
-            const parsedUrl = new URL(value);
-            if (!["http:", "https:"].includes(parsedUrl.protocol)) {
-              message = field.message;
-            }
-          } catch {
-            message = field.message;
-          }
-        }
-
-        setFieldError(field, message);
-        return !message;
-      };
-
-      auditFields.forEach((field) => {
-        field.input.addEventListener("blur", () => validateField(field));
-        field.input.addEventListener("input", () => {
-          if (field.input.hasAttribute("aria-invalid")) {
-            validateField(field);
-          }
-        });
-      });
-
-      auditForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        auditStatus.textContent = "";
-        auditStatus.dataset.state = "";
-
-        const isValid = auditFields.map(validateField).every(Boolean);
-        if (!isValid) {
-          auditStatus.textContent = "Please check the highlighted fields and try again.";
-          auditStatus.dataset.state = "error";
-          auditFields.find((field) => field.input.getAttribute("aria-invalid") === "true")
-            ?.input.focus();
-          return;
-        }
-
-        if (auditForm.elements._gotcha.value) {
-          auditStatus.textContent = "I couldn’t send your request. Please email info@infomarvinsagency.com instead.";
-          auditStatus.dataset.state = "error";
-          return;
-        }
-
-        const formData = new FormData(auditForm);
-        const improvements = formData.getAll("improvements[]");
-        const body = [
-          `Name: ${formData.get("name")}`,
-          `Email: ${formData.get("email")}`,
-          `Store URL: ${formData.get("store_url")}`,
-          `Platform: ${formData.get("platform") || "Not specified"}`,
-          `What to improve: ${improvements.length ? improvements.join(", ") : "Not specified"}`,
-          `Anything else: ${formData.get("notes") || "Not specified"}`,
-        ].join("\n");
-        const subject = `Free store audit request — ${formData.get("name")}`;
-        const mailtoUrl = `mailto:info@infomarvinsagency.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        auditStatus.innerHTML = 'Your email app should open with your request ready. Review it and press Send to deliver it. If nothing opens, <a href="mailto:info@infomarvinsagency.com">email me directly</a>.';
-        auditStatus.dataset.state = "";
-        window.location.href = mailtoUrl;
-      });
-    </script>
   </body>
 </html>
